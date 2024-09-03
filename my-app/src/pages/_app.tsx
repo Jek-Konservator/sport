@@ -1,9 +1,10 @@
 import "../styles/globals.css";
-import { NextPage } from "next";
 import type { AppProps } from "next/app";
-import { ReactElement, ReactNode } from "react";
-import { Box } from "@mui/material";
 import { Header } from "@Components/Header";
+import dayjs from "dayjs";
+import "dayjs/locale/ru";
+
+dayjs.locale("ru");
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

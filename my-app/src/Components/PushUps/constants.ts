@@ -90,7 +90,7 @@ export const PushUpsValue = {
       restTime: 45,
       oneStep: [10, 10, 13, 13, 10, 10, 9, 25],
       twoStep: [18, 18, 20, 20, 17, 17, 20, 40],
-      threeStep: [19, 19, 22, 22, 18, 22, 45],
+      threeStep: [19, 19, 22, 22, 18, 18, 22, 45],
     },
     threeDay: {
       restTime: 45,
@@ -110,13 +110,13 @@ export const PushUpsValue = {
       restTime: 45,
       oneStep: [14, 14, 15, 15, 14, 14, 10, 10, 44],
       twoStep: [20, 20, 23, 23, 20, 20, 18, 18, 53],
-      threeStep: [22, 22, 30, 30, 24, 24, 18, 18, 58],
+      threeStep: [22, 22, 30, 30, 24, 24, 18, 58],
     },
     threeDay: {
       restTime: 45,
       oneStep: [13, 13, 17, 17, 16, 16, 14, 14, 50],
       twoStep: [22, 22, 30, 30, 25, 25, 18, 18, 55],
-      threeStep: [26, 26, 33, 33, 26, 26, 22, 60],
+      threeStep: [26, 26, 33, 33, 26, 26, 22, 22, 60],
     },
   },
 } as const;
