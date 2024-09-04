@@ -6,5 +6,6 @@ export const HeaderContainer = styled("div")`
   height: 50px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 10px 20px;
 `;

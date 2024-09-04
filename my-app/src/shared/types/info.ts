@@ -7,3 +7,9 @@ export interface ProgressInfo {
   day: DayNumberValues;
   step: StepNumberValues;
 }
+
+export interface InfoStorageType {
+  press: ProgressInfo;
+  pushUps: ProgressInfo;
+  squats: ProgressInfo;
+}

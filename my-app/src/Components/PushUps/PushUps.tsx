@@ -5,13 +5,11 @@ import { PushUpsContainer, PushUpsMain, PushUpsText } from "./styled";
 import { SuccessButton, Timer } from "@shared/components";
 import { StepsButtons } from "@shared/components/StepsButtons";
 import { useExercisePage } from "@shared/hooks";
+import { getInfoStorage, setInfoStorageFunc } from "@shared/utils";
+import { InfoStorage } from "@shared/constants";
 
 export const PushUps = () => {
-  const info: ProgressInfo = {
-    week: 1,
-    day: 1,
-    step: 2,
-  };
+  const info = getInfoStorage()?.pushUps || InfoStorage.pushUps;
 
   const {
     onSuccess,
@@ -30,9 +28,18 @@ export const PushUps = () => {
         <span style={{ fontSize: "50px", marginBottom: "20px" }}>
           Отжимания
         </span>
-        <PushUpsText>{step[index]}</PushUpsText>
+        <span style={{ fontSize: "30px", marginBottom: "20px" }}>
+          ({info.week} неделя, {info.day} день, {info.step} уровень)
+        </span>
+        <PushUpsText>{`${index === step.length - 1 ? "Не меньше " : ""}${step[index]}`}</PushUpsText>{" "}
+        <span style={{ fontSize: "30px", marginBottom: "20px" }}>
+          {index + 1}-й подход
+        </span>
         {!onSuccess && (
           <SuccessButton
+            setInfoStorageFunc={() =>
+              setInfoStorageFunc({ info, name: "pushUps" })
+            }
             setOnSuccess={setOnSuccess}
             index={index}
             stepLength={step.length}

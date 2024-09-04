@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   enableWorker: false,
+  cache:false,
   webpack(config, options) {
     config.module.rules.push({
       test: /\.mp3$/,
