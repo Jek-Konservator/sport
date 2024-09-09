@@ -8,9 +8,9 @@ export const Settings = () => {
 
   return (
     <SettingsContainer>
+      <SettingsCard name="pushUps" info={pushUps} />
       <SettingsCard name="press" info={press} />
       <SettingsCard name="squats" info={squats} />
-      <SettingsCard name="pushUps" info={pushUps} />
     </SettingsContainer>
   );
 };
