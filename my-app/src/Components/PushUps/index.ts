@@ -1,1 +1,0 @@
-export { PushUps } from "./PushUps";

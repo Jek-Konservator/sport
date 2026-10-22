@@ -1,0 +1,12 @@
+.light,
+.dark {
+  display: block;
+}
+
+:global([data-mantine-color-scheme="light"]) .dark {
+  display: none;
+}
+
+:global([data-mantine-color-scheme="dark"]) .light {
+  display: none;
+}

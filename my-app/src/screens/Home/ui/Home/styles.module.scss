@@ -1,0 +1,14 @@
+.hero {
+  padding-block: var(--mantine-spacing-xl);
+}
+
+.title {
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  line-height: 1.1;
+}
+
+.start {
+  align-self: flex-start;
+  margin-top: var(--mantine-spacing-sm);
+  box-shadow: 0 10px 30px -10px var(--mantine-color-orange-6);
+}

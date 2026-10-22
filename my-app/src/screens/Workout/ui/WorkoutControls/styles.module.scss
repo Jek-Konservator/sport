@@ -1,0 +1,9 @@
+.root {
+  width: 100%;
+  max-width: 420px;
+}
+
+.main {
+  flex: 1;
+  box-shadow: 0 10px 30px -12px var(--mantine-color-pink-6);
+}

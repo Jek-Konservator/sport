@@ -1,0 +1,40 @@
+.root {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--mantine-color-default-border);
+  border-radius: 50%;
+  color: var(--mantine-color-dimmed);
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 700;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+
+.done {
+  border-color: transparent;
+  background-color: var(--mantine-color-teal-6);
+  color: var(--mantine-color-white);
+}
+
+.current {
+  border-color: transparent;
+  background-image: linear-gradient(
+    135deg,
+    var(--mantine-color-orange-6),
+    var(--mantine-color-pink-6)
+  );
+  color: var(--mantine-color-white);
+  transform: scale(1.15);
+  box-shadow: 0 6px 16px -6px var(--mantine-color-pink-6);
+}

@@ -1,0 +1,1 @@
+export { ExerciseIcon } from "./ExerciseIcon";

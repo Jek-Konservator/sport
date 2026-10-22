@@ -1,1 +1,0 @@
-export { SuccessButton } from "./SuccessButton";

@@ -1,40 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Сила за 6 недель
 
-## Getting Started
+Тренажёр по программе на 6 недель: отжимания → пресс → приседания, таймер отдыха со звуком,
+прогресс хранится в `localStorage` браузера.
 
-First, run the development server:
+## Запуск
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:8080
+npm run check   # prettier + eslint + tsc + vitest с покрытием
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Стек
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Next.js 15 (App Router), React 19, TypeScript strict, Mantine 7 через свой UI Kit,
+effector, farfetched, patronum, react-hook-form + yup, SCSS-модули, vitest + Testing Library.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+`@effector/swc-plugin` закреплён на `0.8.1`: эта версия совместима со SWC в Next 15.5.
+При обновлении Next подбирайте версию плагина под новую версию SWC.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Структура `src/`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+| Слой                | Что лежит                                                    |
+| ------------------- | ------------------------------------------------------------ |
+| `app`               | Роутинг: `/`, `/workout/[exercise]`, `/day-end`, `/settings` |
+| `screens`           | Экраны Home, Workout, DayEnd, Settings: UI, сторы, конфиги   |
+| `features/Layout`   | Шапка, переключатель темы, загрузка прогресса при старте     |
+| `entities/Training` | Программы тренировок, прогресс, API поверх `localStorage`    |
+| `services`          | `storage` (localStorage) и `sound` (проигрывание звука)      |
+| `shared`            | UI Kit, адаптеры форм, роуты, утилиты                        |
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Прогресс хранится под ключом `InfoStorage` в том же формате, что и в старой версии,
+поэтому сохранённые данные пользователей подхватываются.

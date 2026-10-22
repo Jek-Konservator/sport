@@ -1,0 +1,19 @@
+.root {
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--mantine-shadow-lg);
+  }
+}
+
+.order {
+  font-size: 1.5rem;
+  opacity: 0.4;
+}
+
+.action {
+  margin-top: auto;
+}

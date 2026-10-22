@@ -1,0 +1,26 @@
+{
+  "semi": true,
+  "singleQuote": false,
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "printWidth": 100,
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "^react$",
+    "^next(/.*)?$",
+    "<TYPES>^(react|next)(/.*)?$",
+    "<THIRD_PARTY_MODULES>",
+    "^@ui/(.*)$",
+    "<TYPES>",
+    "^@shared/(.*)$",
+    "<TYPES>^@shared/(.*)$",
+    "^@services/(.*)$",
+    "^@entities/(.*)$",
+    "^@features/(.*)$",
+    "^@screens/(.*)$",
+    "<TYPES>^@(services|entities|features|screens)/(.*)$",
+    "^[.]",
+    "<TYPES>^[.]"
+  ],
+  "importOrderTypeScriptVersion": "5.8.0"
+}

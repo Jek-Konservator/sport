@@ -1,1 +1,0 @@
-export { Squats } from "./Squats";

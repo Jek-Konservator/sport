@@ -1,0 +1,13 @@
+.reps {
+  background-image: linear-gradient(
+    135deg,
+    var(--mantine-color-orange-6),
+    var(--mantine-color-pink-6)
+  );
+  background-clip: text;
+  color: transparent;
+  font-size: clamp(5rem, 22vw, 8rem);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
